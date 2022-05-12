@@ -33,8 +33,9 @@ public class MonthlyPaymentProgram {
 			
 			//TODO: checking credit card no is in 5 characters, 
 			//otherwise throw CreditCardException
+		
 		if(temp.length() != 5) {
-			throw new CreditCardException("Please enter 5 characters of credits card number");
+            throw new CreditCardException("Please enter 5 characters of credit card number");
 		}
 		return temp;
 			
@@ -48,12 +49,12 @@ public class MonthlyPaymentProgram {
 			//TODO:  Check loan amount is more than 50,000 and less than 1,000,000
 			// otherwise throw CreditCardException
 			if(amount < 50000 || amount > 1000000) {
-				throw new LoanAmountException("Please enter loan amount between 50,000 - 1,000,000");
-			}
-			return amount;
+                throw new LoanAmountException("Please enter loan amount between 50,000 - 1,000,000");
+            }
+            return amount;
 			
 		//TODO:  Check NumberFormatException 
-		}catch(Exception e) {
+		}catch(NumberFormatException e) {
 			throw new NumberFormatException("Must be number format");
 			
 		}
@@ -68,13 +69,13 @@ public class MonthlyPaymentProgram {
 			//TODO:  Checking the mumber of monthly payment not exceed 48 months and more than 2
 			// otherwise throw PayMonthlyException
 			if(amount < 2 || amount > 48) {
-				throw new PayMonthlyException("Please enter number of nonths between 2 - 48");
-			}
+                throw new PayMonthlyException("Please enter number of months between 2 - 48");
+            }
 			
 			
 			return amount;
 		//TODO:  Check NumberFormatException 
-		}catch(Exception e) {
+		}catch(NumberFormatException e) {
 			throw new NumberFormatException("Must be number format");
 			
 		}
